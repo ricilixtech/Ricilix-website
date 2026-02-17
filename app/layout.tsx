@@ -1,41 +1,46 @@
-import type { Metadata } from 'next'
-import { Poppins, Work_Sans } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
+import type { Metadata } from "next";
+import { Sora, Work_Sans } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-// Configure fonts
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-heading-name',
-  display: 'swap',
-})
+// Heading Font (Updated)
+const headingFont = Sora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
-const workSans = Work_Sans({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-body-name',
-  display: 'swap',
-})
+// Body Font
+const bodyFont = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: 'Ricilix - Business Automation & Digital Solutions',
-  description: 'Transform your business with intelligent automation, CRM optimization, and AI-driven solutions.',
-}
+  title: "Ricilix - Business Automation & Digital Solutions",
+  description:
+    "Transform your business with intelligent automation, CRM optimization, and AI-driven solutions.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${workSans.variable}`}>
-      <body className="font-body bg-white text-neutral-700">
+    <html
+      lang="en"
+      className={`${headingFont.variable} ${bodyFont.variable}`}
+    >
+      <body className="bg-white text-neutral-700 antialiased">
         <Navbar />
         {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 }
