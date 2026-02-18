@@ -2,14 +2,17 @@ import Link from "next/link";
 
 const ServicesOverview = () => {
   return (
-    <section className="py-16 md:py-20 bg-white ">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white via-purple-50 to-purple-200">
+
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-heading tracking-tight
-            leading-tight text-3xl md:text-4xl text-purple-700 mb-4">
+            leading-tight text-4xl md:text-4xl text-purple-700 mb-4">
             Solutions That Drive Growth
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             We solve real operational challenges with technology that works for your business, not against it.
           </p>
         </div>
@@ -62,6 +65,34 @@ const ServicesOverview = () => {
               </p>
             </div>
           </Link>
+          <Link href="/">
+            <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
+    hover:shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+
+              <div className="w-12 h-12 bg-yellow-100 rounded-small flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.8L3 20l1.8-3.2A7.962 7.962 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+
+              <h3 className="text-purple-600 leading-tight tracking-tight font-heading text-xl mb-3">
+                AI Chatbots for Business
+              </h3>
+
+              <p className="text-neutral-600">
+                Provide instant customer support and lead qualification with intelligent chatbots that respond {" "}
+                <span className="font-semibold text-neutral-800">
+                  24/7
+                </span>{" "}
+                and reduce response time by up to {" "}
+                <span className="font-semibold text-neutral-800">
+                  70%
+                </span>{" "}
+                while improving customer engagement.
+              </p>
+
+            </div>
+          </Link>
 
 
           <Link href="/">
@@ -84,6 +115,30 @@ const ServicesOverview = () => {
                   2× faster
                 </span>{" "}
                 with smarter insights.
+              </p>
+
+            </div>
+          </Link>
+          <Link href="/">
+            <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
+    hover:shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+
+              <div className="w-12 h-12 bg-orange-100 rounded-small flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h10M4 17h16" />
+                </svg>
+              </div>
+
+              <h3 className="text-purple-600 leading-tight tracking-tight font-heading text-xl mb-3">
+                Workflow Automation
+              </h3>
+
+              <p className="text-neutral-600">
+                Eliminate repetitive tasks by connecting your tools and automating business processes that increase team productivity by {" "}
+                <span className="font-semibold text-neutral-800">
+                  50%+
+                </span>{" "}
+                while reducing human errors and operational delays.
               </p>
 
             </div>

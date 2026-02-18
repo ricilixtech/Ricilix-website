@@ -55,7 +55,7 @@ const Navbar = () => {
     return (
         <>
             <div
-                className={`sticky top-4 z-50 px-4 sm:px-6 lg:px-8 
+                className={`sticky top-4 z-50 px-4 bg-white sm:px-6 lg:px-8 
                 transition-transform duration-300 ease-in-out
                 ${showNavbar ? "translate-y-0" : "-translate-y-28"}`}
             >

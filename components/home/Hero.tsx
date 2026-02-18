@@ -5,30 +5,17 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-14 md:py-20 xl:py-24 ">
+    <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-4 md:py-8 xl:py-10">
 
-      <div className="
-        max-w-7xl 
-        xl:max-w-none 
-        mx-auto 
-        px-4 sm:px-6 lg:px-8 
-        xl:px-16 2xl:px-24
-      ">
 
+      <div className="max-w-7xl xl:max-w-none md:py-6 py-4 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+
+        {/* ===== HERO GRID ===== */}
         <div className="grid md:grid-cols-2 gap-10 xl:gap-16 2xl:gap-24 items-center">
 
           {/* Text Content */}
           <div>
-            <h1 className="
-              tracking-tight
-              leading-tight
-              font-heading 
-              text-3xl md:text-4xl 
-              xl:text-5xl 
-              2xl:text-6xl 
-              text-purple-700 
-              mb-6 
-            ">
+            <h1 className="tracking-tight leading-tight font-heading text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-purple-700 mb-6">
               Transform Your Business with Intelligent Automation
             </h1>
 
@@ -41,16 +28,16 @@ const Hero = () => {
                 Get Started
               </button>
 
-              <button className="border text-blue-600 border-neutral-300 text-neutral-700 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
+              <button className="border text-blue-600 border-neutral-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
                 View Case Studies
               </button>
             </div>
           </div>
 
-          {/* Image */}
+          {/* Hero Image */}
           <div className="relative h-[320px] md:h-[380px] xl:h-[420px] w-full">
             <Image
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop"
+              src="/pictures/HomePage/Home1.jpeg"
               alt="Business Automation"
               fill
               className="rounded-xl shadow-custom object-cover"
@@ -59,40 +46,69 @@ const Hero = () => {
           </div>
         </div>
 
-       {/* ⭐ Animated Performance Stats */}
-<div className="mt-12 text-center">
-  <p className="text-sm md:text-base text-neutral-600 font-medium">
+        {/* ===== Logo Showcase (Still Inside Hero) ===== */}
 
-    <motion.span
-      className="font-heading font-semibold text-purple-700"
-      animate={{ opacity: [0.1, 1, 0.1] }}
-      transition={{ duration: 3, repeat: Infinity }}
-    >
-      60%
-    </motion.span>{" "}
-    Less Manual Work •{" "}
+        <motion.div
+          className="m-4 md:m-6 flex justify-center"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div
+            className="
+    relative
+    w-[220px] h-[95px]
+    sm:w-[260px] sm:h-[115px]
+    md:w-[400px] md:h-[175px]
+    lg:w-[480px] lg:h-[210px]
+    xl:w-[560px] xl:h-[240px]
+    2xl:w-[620px] 2xl:h-[260px]
+  "
+          >
 
-    <motion.span
-      className="font-heading font-semibold text-purple-700"
-      animate={{ opacity: [0.1, 1, 0.1] }}
-      transition={{ duration: 3, repeat: Infinity }}
-    >
-      40%
-    </motion.span>{" "}
-    Better Pipeline Visibility •{" "}
-
-    <motion.span
-      className="font-heading font-semibold text-purple-700"
-      animate={{ opacity: [0.1, 1, 0.1] }}
-      transition={{ duration: 3, repeat: Infinity }}
-    >
-      2× Faster Operations
-    </motion.span>
-
-  </p>
-</div>
+            <Image
+              src="/pictures/HomePage/Ricilix Logo.png"
+              alt="Ricilix Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </motion.div>
 
 
+        {/* ===== Stats ===== */}
+        <div className="mt-12 text-center">
+          <p className="text-sm md:text-base text-neutral-600 font-medium">
+
+            <motion.span
+              className="font-heading font-semibold text-purple-700"
+              animate={{ opacity: [0.2, 1, 0.2] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              60%
+            </motion.span>{" "}
+            Less Manual Work •{" "}
+
+            <motion.span
+              className="font-heading font-semibold text-purple-700"
+              animate={{ opacity: [0.2, 1, 0.2] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              40%
+            </motion.span>{" "}
+            Better Pipeline Visibility •{" "}
+
+            <motion.span
+              className="font-heading font-semibold text-purple-700"
+              animate={{ opacity: [0.2, 1, 0.2] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              2× Faster Operations
+            </motion.span>
+
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -10,9 +10,10 @@ const Benefits = () => {
         <div className="grid md:grid-cols-2 gap-12 xl:gap-16 2xl:gap-20 items-center">
 
           {/* Image */}
-          <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
+          <div className="relative h-[350px] sm:h-[370px] md:h-[380px] lg:h-[450px] w-full rounded-xl overflow-hidden">
+
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+              src="/pictures/HomePage/Home2.jpeg"
               alt="Business Results"
               fill
               className="object-cover shadow-custom"
