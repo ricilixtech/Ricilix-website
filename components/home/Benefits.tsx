@@ -5,7 +5,7 @@ const Benefits = () => {
     <section className="py-16 md:py-20 bg-neutral-50">
 
       {/* Wider container on large screens */}
-      <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid md:grid-cols-2 gap-12 xl:gap-16 2xl:gap-20 items-center">
 
@@ -20,7 +20,7 @@ const Benefits = () => {
           </div>
 
           {/* Content */}
-          <div>
+          <div className=''>
             <h2 className="font-heading text-3xl md:text-4xl text-purple-700 mb-6 leading-tight tracking-tight">
               Why Businesses Choose Ricilix
             </h2>

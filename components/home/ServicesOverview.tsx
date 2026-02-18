@@ -17,7 +17,7 @@ const ServicesOverview = () => {
         <div className="grid md:grid-cols-3 gap-8">
 
           <Link href="/">
-          <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
+            <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
     hover:shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
 
               <div className="w-12 h-12 bg-blue-100 rounded-small flex items-center justify-center mb-6">
@@ -31,14 +31,17 @@ const ServicesOverview = () => {
               </h3>
 
               <p className="text-neutral-600">
-                Eliminate repetitive tasks and streamline operations with intelligent automation workflows.
+                Reduce manual work by up to {" "}
+                <span className="font-semibold text-neutral-800">
+                  60%
+                </span>{" "} and streamline daily operations with automated workflows designed to save time and lower operational costs.
               </p>
             </div>
           </Link>
 
 
           <Link href="/">
-          <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
+            <div className="bg-white border border-purple-300 p-8 rounded-lg shadow-sm 
     hover:shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
 
               <div className="w-12 h-12 bg-purple-100 rounded-small flex items-center justify-center mb-6">
@@ -52,7 +55,10 @@ const ServicesOverview = () => {
               </h3>
 
               <p className="text-neutral-600">
-                Maximize customer relationships with tailored CRM systems that boost retention and revenue.
+                Increase customer retention and sales visibility with structured CRM systems proven to improve pipeline efficiency by {" "}
+                <span className="font-semibold text-neutral-800">
+                  30%-40%
+                </span>{" "}.
               </p>
             </div>
           </Link>
@@ -73,8 +79,13 @@ const ServicesOverview = () => {
               </h3>
 
               <p className="text-neutral-600">
-                Leverage AI-powered tools to make smarter decisions and automate complex processes.
+                Deploy AI-powered solutions that accelerate decision-making and automate complex processes, helping teams operate{" "}
+                <span className="font-semibold text-neutral-800">
+                  2× faster
+                </span>{" "}
+                with smarter insights.
               </p>
+
             </div>
           </Link>
 

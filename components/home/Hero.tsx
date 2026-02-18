@@ -1,45 +1,38 @@
-import Image from 'next/image';
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-14 md:py-20 xl:py-24 ">
 
-  {/* ⭐ Container */}
-  <div className="
-    max-w-7xl 
-    xl:max-w-none 
-    mx-auto 
-    px-4 sm:px-6 lg:px-8 
-    xl:px-16 2xl:px-24
-  ">
+      <div className="
+        max-w-7xl 
+        xl:max-w-none 
+        mx-auto 
+        px-4 sm:px-6 lg:px-8 
+        xl:px-16 2xl:px-24
+      ">
 
-
-        <div className="grid md:grid-cols-2 
-                        gap-10 xl:gap-16 2xl:gap-24 
-                        items-center">
+        <div className="grid md:grid-cols-2 gap-10 xl:gap-16 2xl:gap-24 items-center">
 
           {/* Text Content */}
           <div>
             <h1 className="
-            tracking-tight
-            leading-tight
+              tracking-tight
+              leading-tight
               font-heading 
               text-3xl md:text-4xl 
               xl:text-5xl 
               2xl:text-6xl 
               text-purple-700 
               mb-6 
-              
             ">
               Transform Your Business with Intelligent Automation
             </h1>
 
-            <p className="
-              text-base md:text-lg 
-              xl:text-xl 
-              text-neutral-600 
-              mb-8
-            ">
+            <p className="text-base md:text-lg xl:text-xl text-neutral-600 mb-8">
               We help eCommerce and service businesses scale faster with AI-driven workflows, CRM optimization, and custom automation solutions.
             </p>
 
@@ -64,8 +57,42 @@ const Hero = () => {
               priority
             />
           </div>
-
         </div>
+
+       {/* ⭐ Animated Performance Stats */}
+<div className="mt-12 text-center">
+  <p className="text-sm md:text-base text-neutral-600 font-medium">
+
+    <motion.span
+      className="font-heading font-semibold text-purple-700"
+      animate={{ opacity: [0.1, 1, 0.1] }}
+      transition={{ duration: 3, repeat: Infinity }}
+    >
+      60%
+    </motion.span>{" "}
+    Less Manual Work •{" "}
+
+    <motion.span
+      className="font-heading font-semibold text-purple-700"
+      animate={{ opacity: [0.1, 1, 0.1] }}
+      transition={{ duration: 3, repeat: Infinity }}
+    >
+      40%
+    </motion.span>{" "}
+    Better Pipeline Visibility •{" "}
+
+    <motion.span
+      className="font-heading font-semibold text-purple-700"
+      animate={{ opacity: [0.1, 1, 0.1] }}
+      transition={{ duration: 3, repeat: Infinity }}
+    >
+      2× Faster Operations
+    </motion.span>
+
+  </p>
+</div>
+
+
       </div>
     </section>
   );
