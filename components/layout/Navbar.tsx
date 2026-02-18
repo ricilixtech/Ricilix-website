@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Space_Grotesk } from "next/font/google";
@@ -14,24 +14,30 @@ const spaceGrotesk = Space_Grotesk({
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(true);
+
     const pathname = usePathname();
     const router = useRouter();
 
-    let lastScrollY = 0;
+    const lastScrollY = useRef(0); // ✅ persists value
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY) {
+            // ⭐ Always show navbar near top
+            if (currentScrollY < 50) {
+                setShowNavbar(true);
+            }
+            else if (currentScrollY > lastScrollY.current) {
                 // scrolling down
                 setShowNavbar(false);
-            } else {
+            } 
+            else {
                 // scrolling up
                 setShowNavbar(true);
             }
 
-            lastScrollY = currentScrollY;
+            lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -53,30 +59,21 @@ const Navbar = () => {
                 transition-transform duration-300 ease-in-out
                 ${showNavbar ? "translate-y-0" : "-translate-y-28"}`}
             >
-                <nav className="max-w-7xl mx-auto 
-                    bg-white
-                    border 
-                    border-purple-500 
-                    rounded-2xl 
-                    shadow-sm">
+                <nav className="max-w-7xl mx-auto bg-white border border-purple-500 rounded-2xl shadow-sm">
 
                     <div className="px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-center h-16">
 
                             {/* Logo */}
-                            <div className="flex items-center">
-                                <Link href="/">
-                                    <span
-                                        className={`${spaceGrotesk.className}
-                                        font-bold text-2xl sm:text-3xl lg:text-4xl 
-                                        bg-gradient-to-r from-blue-600 to-purple-600 
-                                        bg-clip-text text-transparent tracking-tight 
-                                        hover:opacity-80 transition`}
-                                    >
-                                        Ricilix
-                                    </span>
-                                </Link>
-                            </div>
+                            <Link href="/">
+                                <span className={`${spaceGrotesk.className}
+                                    font-bold text-2xl sm:text-3xl lg:text-4xl 
+                                    bg-gradient-to-r from-blue-600 to-purple-600 
+                                    bg-clip-text text-transparent tracking-tight 
+                                    hover:opacity-80 transition`}>
+                                    Ricilix
+                                </span>
+                            </Link>
 
                             {/* Desktop Links */}
                             <div className="hidden md:flex space-x-8">
@@ -104,9 +101,7 @@ const Navbar = () => {
                                 <button
                                     onClick={() => router.push('/contact')}
                                     className="bg-blue-600 font-bold text-white 
-                                    px-6 py-2 rounded-lg hover:bg-blue-700 
-                                    transition cursor-pointer"
-                                >
+                                    px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                                     Get a Quote
                                 </button>
                             </div>
