@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -32,25 +32,6 @@ const testimonials = [
 const TrustSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Auto Slide
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const interval = setInterval(() => {
-      slider.scrollBy({ left: 320, behavior: "smooth" });
-
-      if (
-        slider.scrollLeft + slider.clientWidth >=
-        slider.scrollWidth - 10
-      ) {
-        slider.scrollTo({ left: 0, behavior: "smooth" });
-      }
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="py-16 md:py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,30 +47,37 @@ const TrustSection = () => {
           </p>
         </div>
 
-        
         {/* Slider */}
         <div
           ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-6"
+          className="
+            flex gap-6 
+            overflow-x-auto 
+            scrollbar-hide 
+            scroll-smooth
+            snap-x snap-mandatory
+            pb-6
+          "
         >
           {testimonials.map((item, index) => (
             <div
               key={index}
               className="
-        min-w-[280px]
-        sm:min-w-[320px]
-        lg:min-w-[420px]
-        xl:min-w-[480px]
-        bg-white 
-        p-6 
-        rounded-2xl 
-        shadow-sm 
-        border 
-        border-neutral-100
-      "
+                snap-start
+                min-w-[280px]
+                sm:min-w-[320px]
+                lg:min-w-[420px]
+                xl:min-w-[480px]
+                bg-white 
+                p-6 
+                rounded-2xl 
+                shadow-sm 
+                border 
+                border-neutral-100
+              "
             >
               {/* Company Name */}
-              <h3 className="font-heading text-xl font-semibold mb-2">
+              <h3 className="font-heading text-purple-700 text-xl font-semibold mb-2">
                 {item.company}
               </h3>
 

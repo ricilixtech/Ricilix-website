@@ -18,7 +18,7 @@ const CaseStudyPreview = () => {
         <div className="grid md:grid-cols-2 gap-8 xl:gap-12">
 
           {/* Card 1 */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-large">
+          <div className="rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-large">
 
             <div className="mb-6">
               <span className="text-sm font-medium text-purple-600 uppercase tracking-wide">
@@ -41,7 +41,7 @@ const CaseStudyPreview = () => {
 
 
           {/* Card 2 */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-large">
+          <div className="rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-large">
 
             <div className="mb-6">
               <span className="text-sm font-medium text-purple-600 uppercase tracking-wide">
