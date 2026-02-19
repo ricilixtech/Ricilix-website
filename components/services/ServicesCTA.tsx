@@ -1,6 +1,6 @@
 const ServicesCTA = () => {
     return (
-      <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600 max-h-[500px] overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
             Ready to Transform Your Operations?

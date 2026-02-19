@@ -8,8 +8,8 @@ export default function AboutPage() {
   return (
     <>
       <Mission />
-      <VisionPhilosophy />
       <Founders />
+      <VisionPhilosophy />
       <Values />
       <WhyDifferent />
     </>

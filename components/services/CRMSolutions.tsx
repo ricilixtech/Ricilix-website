@@ -2,17 +2,10 @@ import Image from 'next/image';
 
 const CRMSolutions = () => {
   return (
-    <section className="py-16 md:py-20 bg-neutral-50 max-h-[900px] overflow-hidden">
+    <section className="py-16 md:py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 relative h-[400px] w-full">
-            <Image
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop"
-              alt="CRM Solutions"
-              fill
-              className="rounded-large shadow-custom object-cover"
-            />
-          </div>
+        
           <div className="order-1 md:order-2">
             <div className="inline-block bg-purple-100 text-purple-600 px-4 py-2 rounded-small text-sm font-medium mb-6">
               CRM Optimization
@@ -62,6 +55,14 @@ const CRMSolutions = () => {
             </button>
           </div>
         </div>
+        <div className="relative h-[400px] w-full mt-8 rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop"
+              alt="CRM Solutions"
+              fill
+              className="object-cover"
+            />
+          </div>
       </div>
     </section>
   );

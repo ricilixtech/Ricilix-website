@@ -4,34 +4,28 @@ import { useRef, useState } from "react";
 
 const testimonials = [
   {
-    company: "TechNova Solutions",
-    description: "Enterprise workflow automation provider",
+    company: "KRC Kankai",
+    description: "Automotive rubber spare parts supplier for cars",
     rating: 5,
     review:
-      "Ricilix transformed our workflow automation. Our team productivity increased dramatically.",
+      "Ricilix streamlined our inventory and order management processes. Our operations are now faster and far more efficient.",
   },
   {
-    company: "Velocity Commerce",
-    description: "E-commerce growth and analytics platform",
+    company: "Revcharge",
+    description: "EV charger sales and distribution company",
     rating: 4,
     review:
-      "Their AI integrations helped us improve customer support and reduce response time.",
+      "With Ricilix automation and AI integrations, we improved customer inquiries handling and boosted our sales workflow.",
   },
   {
-    company: "NextGen Logistics",
-    description: "Supply chain and logistics management company",
-    rating: 5,
-    review:
-      "Professional team and exceptional automation solutions. Highly recommended.",
-  },
-  {
-    company: "Digital Orbit",
+    company: "Ihsan Traders",
     description: "Digital transformation and CRM consultancy",
     rating: 5,
     review:
       "Ricilix helped streamline our CRM and business processes efficiently.",
   },
 ];
+
 
 const TrustSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);

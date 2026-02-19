@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const AIIntegration = () => {
   return (
-    <section className="py-16 md:py-20 bg-white max-h-[900px] overflow-hidden">
+    <section className="py-16 md:py-20 bg-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -53,12 +53,12 @@ const AIIntegration = () => {
               Learn More
             </button>
           </div>
-          <div className="relative h-[400px] w-full">
+          <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop"
               alt="AI Integration"
               fill
-              className="rounded-large shadow-custom object-cover"
+              className="object-cover"
             />
           </div>
         </div>
