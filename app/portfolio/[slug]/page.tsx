@@ -3,7 +3,20 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export default async function ProjectDetail({ params }) {
+type PageProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+// ✅ Important for production (prevents 404 on Vercel)
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default async function ProjectDetail({ params }: PageProps) {
   const { slug } = await params;
 
   const project = projects.find((p) => p.slug === slug);
@@ -16,7 +29,6 @@ export default async function ProjectDetail({ params }) {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 py-16 px-6">
       <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-purple-100">
 
-        {/* Back Button */}
         <Link
           href="/portfolio"
           className="text-sm text-purple-600 hover:text-purple-800 mb-8 inline-block"
@@ -24,16 +36,12 @@ export default async function ProjectDetail({ params }) {
           ← Back to Portfolio
         </Link>
 
-        {/* Top Section */}
         <div className="grid md:grid-cols-2 gap-10 items-start">
-
-          {/* LEFT SIDE - TEXT */}
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-purple-800 mb-6">
               {project.title}
             </h1>
 
-            {/* Problem */}
             <section className="mb-8">
               <h2 className="text-lg font-semibold text-purple-700 mb-2">
                 Problem
@@ -43,7 +51,6 @@ export default async function ProjectDetail({ params }) {
               </p>
             </section>
 
-            {/* Solution */}
             <section className="mb-8">
               <h2 className="text-lg font-semibold text-purple-700 mb-2">
                 Solution
@@ -54,7 +61,6 @@ export default async function ProjectDetail({ params }) {
             </section>
           </div>
 
-          {/* RIGHT SIDE - IMAGE */}
           <div className="relative w-full h-72 md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
               src={project.image}
@@ -65,7 +71,6 @@ export default async function ProjectDetail({ params }) {
           </div>
         </div>
 
-        {/* Features */}
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-purple-700 mb-6">
             Key Features
@@ -82,7 +87,6 @@ export default async function ProjectDetail({ params }) {
           </div>
         </section>
 
-        {/* Tech Stack */}
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-purple-700 mb-6">
             Tech Stack
@@ -99,7 +103,6 @@ export default async function ProjectDetail({ params }) {
           </div>
         </section>
 
-        {/* Impact */}
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-purple-700 mb-6">
             Impact
