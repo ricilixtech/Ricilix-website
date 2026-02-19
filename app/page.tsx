@@ -13,7 +13,7 @@ export default function Home() {
       <ServicesOverview />
       <Benefits />
       <CaseStudyPreview />
-      <PortfolioPreview /> {/* 👈 HERE */}
+      <PortfolioPreview />
       <TrustSection />
       <CTASection />
     </>
