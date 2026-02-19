@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+// Import 3D Model (disable SSR)
+const RicilixModel = dynamic(() => import("./RicilixModel"), {
+  ssr: false,
+});
 
 const Hero = () => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-4 md:py-8 xl:py-10">
-
 
       <div className="max-w-7xl xl:max-w-none md:py-6 py-4 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
 
@@ -46,8 +51,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* ===== Logo Showcase (Still Inside Hero) ===== */}
-
+        {/* ===== Logo ===== */}
         <motion.div
           className="m-4 md:m-6 flex justify-center"
           initial={{ opacity: 0, y: 40 }}
@@ -56,16 +60,15 @@ const Hero = () => {
         >
           <div
             className="
-    relative
-    w-[220px] h-[95px]
-    sm:w-[260px] sm:h-[115px]
-    md:w-[400px] md:h-[175px]
-    lg:w-[480px] lg:h-[210px]
-    xl:w-[560px] xl:h-[240px]
-    2xl:w-[620px] 2xl:h-[260px]
-  "
+              relative
+              w-[220px] h-[95px]
+              sm:w-[260px] sm:h-[115px]
+              md:w-[400px] md:h-[175px]
+              lg:w-[480px] lg:h-[210px]
+              xl:w-[560px] xl:h-[240px]
+              2xl:w-[620px] 2xl:h-[260px]
+            "
           >
-
             <Image
               src="/pictures/HomePage/Ricilix Logo.png"
               alt="Ricilix Logo"
@@ -76,11 +79,9 @@ const Hero = () => {
           </div>
         </motion.div>
 
-
         {/* ===== Stats ===== */}
         <div className="mt-12 text-center">
           <p className="text-sm md:text-base text-neutral-600 font-medium">
-
             <motion.span
               className="font-heading font-semibold text-purple-700"
               animate={{ opacity: [0.2, 1, 0.2] }}
@@ -89,7 +90,6 @@ const Hero = () => {
               60%
             </motion.span>{" "}
             Less Manual Work •{" "}
-
             <motion.span
               className="font-heading font-semibold text-purple-700"
               animate={{ opacity: [0.2, 1, 0.2] }}
@@ -98,7 +98,6 @@ const Hero = () => {
               40%
             </motion.span>{" "}
             Better Pipeline Visibility •{" "}
-
             <motion.span
               className="font-heading font-semibold text-purple-700"
               animate={{ opacity: [0.2, 1, 0.2] }}
@@ -106,10 +105,16 @@ const Hero = () => {
             >
               2× Faster Operations
             </motion.span>
-
           </p>
         </div>
+
       </div>
+
+      {/* ===== 3D MODEL (Full Width Bottom) ===== */}
+      {/* <div className="mt-6 w-full">
+        <RicilixModel />
+      </div> */}
+
     </section>
   );
 };
