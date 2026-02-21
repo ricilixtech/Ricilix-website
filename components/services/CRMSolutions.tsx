@@ -10,7 +10,7 @@ const CRMSolutions = () => {
             <div className="inline-block bg-purple-100 text-purple-600 px-4 py-2 rounded-small text-sm font-medium mb-6">
               CRM Optimization
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl text-neutral-900 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl leading-tight tracking-tight text-purple-700 mb-6">
               Turn Customers Into Loyal Advocates
             </h2>
             <p className="text-neutral-600 mb-6">
@@ -50,9 +50,7 @@ const CRMSolutions = () => {
               </div>
             </div>
             
-            <button className="bg-purple-600 text-white px-6 py-3 rounded-small hover:bg-purple-700 transition">
-              Learn More
-            </button>
+            
           </div>
         </div>
         <div className="relative h-[400px] w-full mt-8 rounded-2xl overflow-hidden shadow-xl">

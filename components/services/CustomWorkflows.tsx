@@ -9,7 +9,7 @@ const CustomWorkflows = () => {
             <div className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-small text-sm font-medium mb-6">
               Custom Workflows
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl text-neutral-900 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl leading-tight tracking-tight text-purple-700 mb-6">
               Digitize Your Unique Business Processes
             </h2>
             <p className="text-neutral-600 mb-6">
@@ -49,9 +49,7 @@ const CustomWorkflows = () => {
               </div>
             </div>
             
-            <button className="bg-orange-600 text-white px-6 py-3 rounded-small hover:bg-orange-700 transition">
-              Learn More
-            </button>
+           
           </div>
           <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
             <Image
