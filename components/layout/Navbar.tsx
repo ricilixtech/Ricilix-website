@@ -1,4 +1,6 @@
 'use client';
+import Image from "next/image";
+
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -31,7 +33,7 @@ const Navbar = () => {
             else if (currentScrollY > lastScrollY.current) {
                 // scrolling down
                 setShowNavbar(false);
-            } 
+            }
             else {
                 // scrolling up
                 setShowNavbar(true);
@@ -66,15 +68,17 @@ const Navbar = () => {
                         <div className="flex justify-between items-center h-16">
 
                             {/* Logo */}
-                            <Link href="/">
-                                <span className={`${spaceGrotesk.className}
-                                    font-bold text-2xl sm:text-3xl lg:text-4xl 
-                                    bg-gradient-to-r from-blue-600 to-purple-600 
-                                    bg-clip-text text-transparent tracking-tight 
-                                    hover:opacity-80 transition`}>
-                                    Ricilix
-                                </span>
+                            <Link href="/" className="flex items-center">
+                                <Image
+                                    src="/pictures/HomePage/Ricilix Logo.png"
+                                    alt="Ricilix Logo"
+                                    width={160}
+                                    height={50}
+                                    priority
+                                    className="h-17 xl:h-20 w-auto object-contain hover:opacity-80 transition"
+                                />
                             </Link>
+
 
                             {/* Desktop Links */}
                             <div className="hidden md:flex space-x-8">
