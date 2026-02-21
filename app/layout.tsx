@@ -34,13 +34,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${headingFont.variable} ${bodyFont.variable}`}
+      className={`${headingFont.variable} ${bodyFont.variable} bg-white`}
     >
-      <body className="bg-white text-neutral-700 antialiased">
+      <body className="bg-white text-neutral-700 antialiased min-h-screen">
         <Navbar />
-        {children}
+        <main className="bg-white">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
   );
 }
+
