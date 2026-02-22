@@ -2,8 +2,12 @@
 
 /* Root Theme Variables */
 :root {
-  --background: #ffffff;
+  --background: #ad6ac7;
   --foreground: #171717;
+
+  /* Next.js font variables will override these */
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 /* Tailwind Theme Mapping */
@@ -11,24 +15,17 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Connect Next.js Fonts */
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Default Body Styling */
+/* Force Absolute White Background */
+html,
 body {
-  background: var(--background);
+  background-color: #ffffff;
   color: var(--foreground);
   font-family: var(--font-body);
+  scroll-behavior: smooth;
 }
 
 /* Automatically Apply Heading Font */
@@ -36,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* Hide Scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -44,6 +42,8 @@ h1, h2, h3, h4, h5, h6 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Marquee Animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -60,4 +60,3 @@ h1, h2, h3, h4, h5, h6 {
 .animate-scroll-reverse {
   animation: scroll 60s linear infinite reverse;
 }
-

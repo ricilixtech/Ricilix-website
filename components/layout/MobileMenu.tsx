@@ -53,7 +53,7 @@ const MobileMenu = ({ isOpen, onClose, navLinks }: MobileMenuProps) => {
 
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 text-neutral-700 cursor-pointer"
+            className="absolute top-4 right-4 text-purple-700 cursor-pointer"
             onClick={onClose}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,8 +73,8 @@ const MobileMenu = ({ isOpen, onClose, navLinks }: MobileMenuProps) => {
                   onClick={onClose}
                   className={`block font-medium text-lg transition ${
                     isActive
-                      ? 'text-blue-600'
-                      : 'text-neutral-700 hover:text-blue-600'
+                      ? 'text-purple-600 font-bold'
+                      : 'text-black hover:text-purple-300'
                   }`}
                 >
                   {link.label}
@@ -88,7 +88,7 @@ const MobileMenu = ({ isOpen, onClose, navLinks }: MobileMenuProps) => {
                 router.push('/contact');
                 onClose();
               }}
-              className="w-full bg-blue-600 font-bold text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer mt-6"
+              className="w-full bg-purple-600 font-bold text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer mt-6"
             >
               Get a Quote
             </button>

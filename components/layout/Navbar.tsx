@@ -105,15 +105,15 @@ const Navbar = () => {
                             <div className="hidden md:block">
                                 <button
                                     onClick={() => router.push('/contact')}
-                                    className="bg-blue-600 font-bold text-white 
-                                    px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                                    className="bg-purple-600 font-bold text-white 
+                                    px-6 py-2 rounded-lg hover:bg-purple-700 transition">
                                     Get a Quote
                                 </button>
                             </div>
 
                             {/* Mobile Menu */}
                             <button
-                                className="md:hidden text-neutral-700"
+                                className="md:hidden text-purple-700"
                                 onClick={() => setIsMobileMenuOpen(true)}
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

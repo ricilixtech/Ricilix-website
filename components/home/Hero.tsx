@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
+import Link from "next/link";
+
 
 // Import 3D Model (disable SSR)
 const RicilixModel = dynamic(() => import("./RicilixModel"), {
@@ -86,13 +88,12 @@ const Hero = () => {
               variants={slideInLeft}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-purple-600 font-bold text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition shadow-custom">
-                Get Started
-              </button>
+              <Link href="/contact">
+                <button className="bg-purple-600 font-bold text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition shadow-custom">
+                  Get a Quote
+                </button>
+              </Link>
 
-              <button className="border text-blue-600 border-neutral-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
-                View Case Studies
-              </button>
             </motion.div>
           </motion.div>
 
@@ -147,7 +148,7 @@ const Hero = () => {
 
         {/* ================= STATS ================= */}
         <motion.div
-          className="mt-12 text-center"
+          className="mt-4 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

@@ -45,7 +45,7 @@ const Mission = () => {
         </motion.div>
 
         {/* ===== Stats ===== */}
-        <div className="mt-12 text-center">
+        <div className="mt-4 text-center">
           <p className="text-sm md:text-base text-neutral-600 font-medium">
             <motion.span
               className="font-heading font-semibold text-purple-700"
