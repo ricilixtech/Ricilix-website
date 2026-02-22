@@ -9,6 +9,34 @@ const RicilixModel = dynamic(() => import("./RicilixModel"), {
   ssr: false,
 });
 
+/* =========================
+   Animation Variants
+========================= */
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const slideInLeft = {
+  hidden: {
+    opacity: 0,
+    x: -80,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Hero = () => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-4 md:py-8 xl:py-10">
@@ -18,17 +46,31 @@ const Hero = () => {
         {/* ===== HERO GRID ===== */}
         <div className="grid md:grid-cols-2 gap-10 xl:gap-16 2xl:gap-24 items-center">
 
-          {/* Text Content */}
-          <div>
-            <h1 className="tracking-tight leading-tight font-heading text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-purple-700 mb-6">
+          {/* ================= TEXT SECTION ================= */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h1
+              variants={slideInLeft}
+              className="tracking-tight leading-tight font-heading text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-purple-700 mb-6"
+            >
               Transform Your Business with Intelligent Automation
-            </h1>
+            </motion.h1>
 
-            <p className="text-base md:text-lg xl:text-xl text-neutral-600 mb-8">
+            <motion.p
+              variants={slideInLeft}
+              className="text-base md:text-lg xl:text-xl text-neutral-600 mb-8"
+            >
               We help eCommerce and service businesses scale faster with AI-driven workflows, CRM optimization, and custom automation solutions.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div
+              variants={slideInLeft}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <button className="bg-purple-600 font-bold text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition shadow-custom">
                 Get Started
               </button>
@@ -36,11 +78,17 @@ const Hero = () => {
               <button className="border text-blue-600 border-neutral-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
                 View Case Studies
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Hero Image */}
-          <div className="relative h-[320px] md:h-[380px] xl:h-[420px] w-full">
+          {/* ================= IMAGE SECTION ================= */}
+          <motion.div
+            variants={slideInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative h-[320px] md:h-[380px] xl:h-[420px] w-full"
+          >
             <Image
               src="/pictures/HomePage/Home1.jpeg"
               alt="Business Automation"
@@ -48,15 +96,17 @@ const Hero = () => {
               className="rounded-xl shadow-custom object-cover"
               priority
             />
-          </div>
+          </motion.div>
+
         </div>
 
-        {/* ===== Logo ===== */}
+        {/* ================= LOGO ================= */}
         <motion.div
           className="m-4 md:m-6 flex justify-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={slideInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div
             className="
@@ -79,41 +129,40 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* ===== Stats ===== */}
-        <div className="mt-12 text-center">
-          <p className="text-sm md:text-base text-neutral-600 font-medium">
-            <motion.span
-              className="font-heading font-semibold text-purple-700"
-              animate={{ opacity: [0.2, 1, 0.2] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
+        {/* ================= STATS ================= */}
+        <motion.div
+          className="mt-12 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.p
+            variants={slideInLeft}
+            className="text-sm md:text-base text-neutral-600 font-medium"
+          >
+            <span className="font-heading font-semibold text-purple-700">
               60%
-            </motion.span>{" "}
+            </span>{" "}
             Less Manual Work •{" "}
-            <motion.span
-              className="font-heading font-semibold text-purple-700"
-              animate={{ opacity: [0.2, 1, 0.2] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
+            <span className="font-heading font-semibold text-purple-700">
               40%
-            </motion.span>{" "}
+            </span>{" "}
             Better Pipeline Visibility •{" "}
-            <motion.span
-              className="font-heading font-semibold text-purple-700"
-              animate={{ opacity: [0.2, 1, 0.2] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
+            <span className="font-heading font-semibold text-purple-700">
               2× Faster Operations
-            </motion.span>
-          </p>
-        </div>
+            </span>
+          </motion.p>
+        </motion.div>
 
       </div>
 
-      {/* ===== 3D MODEL (Full Width Bottom) ===== */}
-      {/* <div className="mt-6 w-full">
+      {/* ===== 3D MODEL (Optional) ===== */}
+      {/* 
+      <div className="mt-6 w-full">
         <RicilixModel />
-      </div> */}
+      </div> 
+      */}
 
     </section>
   );
