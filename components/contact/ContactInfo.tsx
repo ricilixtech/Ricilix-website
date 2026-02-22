@@ -1,3 +1,5 @@
+import ContactDetail from "./ContactDetail";
+
 const ContactInfo = () => {
     return (
       <div>
@@ -34,16 +36,17 @@ const ContactInfo = () => {
         </div>
         
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-large">
-          <h3 className="font-heading text-xl text-neutral-900 mb-4">
+          <h3 className="font-heading tracking-tight leading-tight text-xl text-purple-800 mb-4">
             Book a Free Consultation
           </h3>
           <p className="text-neutral-600 mb-6">
             Schedule a 30-minute call with our team to discuss your business challenges and explore solutions.
           </p>
-          <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-small hover:bg-blue-700 transition shadow-custom font-medium">
+          <button className="w-full bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition shadow-custom font-medium">
             Schedule Now
           </button>
         </div>
+        <ContactDetail/>
       </div>
     );
   };
