@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
 
 // Import 3D Model (disable SSR)
@@ -13,7 +13,7 @@ const RicilixModel = dynamic(() => import("./RicilixModel"), {
    Animation Variants
 ========================= */
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -22,7 +22,7 @@ const containerVariants = {
   },
 };
 
-const slideInLeft = {
+const slideInLeft: Variants = {
   hidden: {
     opacity: 0,
     x: -80,
@@ -32,10 +32,25 @@ const slideInLeft = {
     x: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1], // ✅ FIXED (valid cubic-bezier)
     },
   },
 };
+const slideInRight: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 80, // 👈 positive value = comes from right
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
 
 const Hero = () => {
   return (
@@ -83,7 +98,7 @@ const Hero = () => {
 
           {/* ================= IMAGE SECTION ================= */}
           <motion.div
-            variants={slideInLeft}
+            variants={slideInRight}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -97,6 +112,7 @@ const Hero = () => {
               priority
             />
           </motion.div>
+
 
         </div>
 
