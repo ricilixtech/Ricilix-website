@@ -62,7 +62,7 @@ const Navbar = () => {
                 transition-transform duration-300 ease-in-out
                 ${showNavbar ? "translate-y-0" : "-translate-y-28"}`}
             >
-                <nav className="max-w-7xl mx-auto bg-white border border-purple-500 rounded-2xl shadow-sm">
+                <nav className=" mx-auto bg-gray-800 text-white border border-red-500 rounded-2xl shadow-sm">
 
                     <div className="px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-center h-16">
@@ -70,12 +70,12 @@ const Navbar = () => {
                             {/* Logo */}
                             <Link href="/" className="flex items-center">
                                 <Image
-                                    src="/pictures/HomePage/Ricilix Logo.png"
+                                    src="/pictures/HomePage/R logo.png"
                                     alt="Ricilix Logo"
                                     width={160}
                                     height={50}
                                     priority
-                                    className="h-17 xl:h-20 w-auto object-contain hover:opacity-80 transition"
+                                    className="h-17 xl:h-20 text-purple-500 w-auto object-contain hover:opacity-80 transition"
                                 />
                             </Link>
 
@@ -91,8 +91,8 @@ const Navbar = () => {
                                             href={link.href}
                                             className={`font-medium transition 
                                             ${isActive
-                                                    ? 'text-blue-600'
-                                                    : 'text-neutral-700 hover:text-blue-600'
+                                                    ? 'text-red-600 font-bold'
+                                                    : 'text-neutral-200 hover:text-red-200'
                                                 }`}
                                         >
                                             {link.label}
@@ -105,8 +105,8 @@ const Navbar = () => {
                             <div className="hidden md:block">
                                 <button
                                     onClick={() => router.push('/contact')}
-                                    className="bg-purple-600 font-bold text-white 
-                                    px-6 py-2 rounded-lg hover:bg-purple-700 transition">
+                                    className="bg-red-600 font-bold text-white 
+                                    px-6 py-2 rounded-lg hover:bg-red-700 transition">
                                     Get a Quote
                                 </button>
                             </div>

@@ -22,7 +22,7 @@
 /* Force Absolute White Background */
 html,
 body {
-  background-color: #ffffff;
+  background-color: #1f1e1e;
   color: var(--foreground);
   font-family: var(--font-body);
   scroll-behavior: smooth;

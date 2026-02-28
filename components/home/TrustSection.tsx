@@ -26,49 +26,43 @@ const testimonials = [
   },
 ];
 
-
 const TrustSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
   const [thumbWidth, setThumbWidth] = useState(0);
   const [thumbLeft, setThumbLeft] = useState(0);
-  
+
   const handleScroll = () => {
     const el = sliderRef.current;
     if (!el) return;
-  
+
     const visibleWidth = el.clientWidth;
     const totalWidth = el.scrollWidth;
     const maxScroll = totalWidth - visibleWidth;
-  
     const scrollLeft = el.scrollLeft;
-  
-    // Calculate thumb width ratio
+
     const widthRatio = visibleWidth / totalWidth;
     const calculatedThumbWidth = widthRatio * 100;
-  
-    // Calculate thumb position ratio
+
     const scrollRatio = scrollLeft / maxScroll;
     const maxThumbMove = 100 - calculatedThumbWidth;
     const calculatedThumbLeft = scrollRatio * maxThumbMove;
-  
+
     setThumbWidth(calculatedThumbWidth);
     setThumbLeft(calculatedThumbLeft);
   };
-  
-  
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white via-purple-50 to-purple-200">
+    <section className=" relative py-16 md:py-20 ">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="font-heading tracking-tight text-4xl text-purple-700 mb-4">
-            Trusted by Growing Businesses
+          <h2 className="font-heading tracking-tight text-4xl text-white font-bold mb-4">
+            Trusted by Growing <span className="text-red-500">
+              Businesses
+            </span>
           </h2>
-          <p className="text-lg text-neutral-600">
+          <p className="text-neutral-300 text-lg">
             Join companies that transformed operations with Ricilix.
           </p>
         </div>
@@ -91,23 +85,17 @@ const TrustSection = () => {
               key={index}
               className="
                 snap-start
-                min-w-[280px]
-                sm:min-w-[320px]
-                lg:min-w-[420px]
-                xl:min-w-[480px]
-                bg-white 
-                p-6 
-                rounded-2xl 
-                shadow-sm 
-                border 
-                border-neutral-100
+                min-w-[280px] sm:min-w-[320px] lg:min-w-[420px] xl:min-w-[480px]
+                bg-gray-800/70 border border-red-500 backdrop-blur-lg
+                p-6 rounded-2xl shadow-lg shadow-red-500/50
+                transition-transform hover:scale-105 cursor-pointer
               "
             >
-              <h3 className="font-heading text-purple-700 text-xl font-semibold">
+              <h3 className="font-heading text-xl font-semibold text-red-500 mb-2">
                 {item.company}
               </h3>
 
-              <p className="text-sm text-purple-500 mb-3">
+              <p className="text-red-400 text-sm mb-3 font-semibold">
                 {item.description}
               </p>
 
@@ -119,7 +107,7 @@ const TrustSection = () => {
                 ))}
               </div>
 
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-neutral-300 leading-relaxed">
                 {item.review}
               </p>
             </div>
@@ -128,18 +116,16 @@ const TrustSection = () => {
 
         {/* Custom Scroll Track */}
         <div className="mt-8 w-full max-w-xl mx-auto">
-  <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
-    <div
-      className="absolute top-0 h-full bg-gray-500 rounded-full transition-all duration-200 ease-out"
-      style={{
-        width: `${thumbWidth}%`,
-        left: `${thumbLeft}%`,
-      }}
-    ></div>
-  </div>
-</div>
-
-
+          <div className="relative h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="absolute top-0 h-full bg-red-500 rounded-full transition-all duration-200 ease-out"
+              style={{
+                width: `${thumbWidth}%`,
+                left: `${thumbLeft}%`,
+              }}
+            ></div>
+          </div>
+        </div>
 
       </div>
     </section>
