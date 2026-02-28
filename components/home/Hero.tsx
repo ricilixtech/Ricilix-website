@@ -83,7 +83,7 @@ const Hero = () => {
 
             <motion.p
               variants={slideInLeft}
-              className="text-base md:text-lg xl:text-xl text-gray-300 mb-8"
+              className="text-base md:text-lg xl:text-xl text-neutral-200 mb-8"
             >
               We help eCommerce and service businesses scale faster with AI-driven workflows, CRM optimization, and custom automation solutions.
             </motion.p>
