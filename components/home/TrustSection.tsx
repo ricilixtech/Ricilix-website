@@ -53,7 +53,7 @@ const TrustSection = () => {
 
   return (
     <section className=" relative py-16 md:py-20 ">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-2 lg:mx-4 py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 border border-red-200 rounded-lg bg-gray-900/60">
 
         {/* Heading */}
         <div className="text-center mb-12">
@@ -62,7 +62,7 @@ const TrustSection = () => {
               Businesses
             </span>
           </h2>
-          <p className="text-neutral-300 text-lg">
+          <p className="text-neutral-200 text-lg">
             Join companies that transformed operations with Ricilix.
           </p>
         </div>

@@ -23,10 +23,10 @@ const caseStudies = [
 const CaseStudyPreview = () => {
   return (
     <section className="py-20 relative">
-      <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl py-10 mx-4 lg:mx-8 px-4 sm:px-6 lg:px-8 border border-red-200 rounded-lg bg-gray-900/60">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 ">
           <h2 className="font-heading text-3xl md:text-4xl text-white font-bold mb-4 tracking-tight leading-tight">
             Real  <span className="text-red-500">
               Results
@@ -34,7 +34,7 @@ const CaseStudyPreview = () => {
               Impact
             </span>
           </h2>
-          <p className="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-neutral-200 text-lg md:text-xl max-w-2xl mx-auto">
             See how we transform complex operations into intelligent, scalable business systems.
           </p>
         </div>
@@ -49,7 +49,7 @@ const CaseStudyPreview = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.15 }}
             >
-              <div className="bg-gray-800/70 border border-red-400 backdrop-blur-lg rounded-2xl p-8 shadow-lg shadow-red-500/60 hover:shadow-red-500/80 transition-all duration-300">
+              <div className="bg-gray-800/60 border border-red-400 backdrop-blur-lg rounded-2xl p-8 shadow-lg shadow-red-500/60 hover:shadow-red-500/80 transition-all duration-300">
 
                 <span className="text-sm font-medium text-red-500 font-bold uppercase tracking-wide mb-2 inline-block">
                   {caseStudy.category}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-// Row 1 technologies (existing stack)
+// Row 1 technologies
 const row1Technologies = [
   { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier" },
@@ -13,22 +13,22 @@ const row1Technologies = [
   { name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
 ];
 
-// Row 2 technologies (new stack)
+// Row 2 technologies
 const row2Technologies = [
-    { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-    { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
-    { name: "HuggingFace", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/huggingface.svg" },
-    { name: "LangChain", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/langchain.svg" },
-  ];
+  { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+  { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+  { name: "HuggingFace", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/huggingface.svg" },
+  { name: "LangChain", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/langchain.svg" },
+];
 
 const TechRow = ({ technologies, reverse = false }: { technologies: typeof row1Technologies; reverse?: boolean }) => {
   return (
     <div className="relative overflow-hidden">
       <div
         className={`
-          flex w-max gap-6 md:gap-8
+          flex w-max gap-3 md:gap-8
           ${reverse ? "animate-scroll-reverse" : "animate-scroll"}
           group-hover:[animation-play-state:paused]
         `}
@@ -37,13 +37,13 @@ const TechRow = ({ technologies, reverse = false }: { technologies: typeof row1T
           <div
             key={index}
             className="
-              flex items-center gap-3
+              flex items-center gap-2 md:gap-3
               bg-gradient-to-r from-gray-800/80 via-gray-900/60 to-black/80
               backdrop-blur-lg
               shadow-xl shadow-purple-500/30
-              rounded-2xl
-              px-5 py-3
-              min-w-[150px] md:min-w-[180px]
+              rounded-xl md:rounded-2xl
+              px-3 py-2 md:px-5 md:py-3
+              min-w-[120px] md:min-w-[180px]
               border border-purple-700/20
               hover:scale-105 hover:shadow-purple-500/50
               transition-transform duration-300
@@ -54,10 +54,14 @@ const TechRow = ({ technologies, reverse = false }: { technologies: typeof row1T
               alt={tech.name}
               width={tech.name === "OpenAI" ? 80 : 28}
               height={tech.name === "OpenAI" ? 32 : 28}
-              className={`object-contain ${tech.name === "OpenAI" ? "w-20 h-auto" : "w-9 h-8"}`}
+              className={`object-contain ${
+                tech.name === "OpenAI"
+                  ? "w-14 md:w-20 h-auto"
+                  : "w-6 h-6 md:w-9 md:h-8"
+              }`}
               unoptimized
             />
-            <p className="text-sm md:text-base font-semibold text-white whitespace-nowrap">
+            <p className="text-xs md:text-base font-semibold text-white whitespace-nowrap">
               {tech.name}
             </p>
           </div>
@@ -73,38 +77,46 @@ const Technologies = () => {
       <div className="mx-auto px-6">
 
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Cutting-Edge <span className="text-red-500">Technologies</span>
-          </h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
-            We leverage modern automation, AI, and cloud platforms to deliver scalable, reliable, and intelligent business systems.
-          </p>
+        <div className="w-full flex justify-center px-4 lg:px-5">
+          <div className="text-center mb-16 border border-red-200 rounded-lg py-6 px-4 lg:px-8 bg-gray-900/60 max-w-4xl w-full">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Cutting-Edge <span className="text-red-500">Technologies</span>
+            </h2>
+
+            <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto">
+              We leverage modern automation, AI, and cloud platforms to deliver scalable,
+              reliable, and intelligent business systems.
+            </p>
+          </div>
         </div>
 
-        {/* Desktop → 2 Rows */}
+        {/* Desktop */}
         <div className="hidden md:block space-y-12">
           <TechRow technologies={row1Technologies} />
           <TechRow technologies={row2Technologies} reverse />
         </div>
 
-        {/* Mobile → 2 Rows */}
-        <div className="md:hidden space-y-4">
+        {/* Mobile */}
+        <div className="md:hidden space-y-6">
           <TechRow technologies={row1Technologies} />
           <TechRow technologies={row2Technologies} reverse />
         </div>
 
         {/* Bottom Statement */}
-        <div className="mt-20 px-6 text-center">
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
+        <div className="mt-20 sm:px-2 px-4 py-3 text-center border border-red-200 rounded-lg bg-gray-900/60">
+          <p className="text-gray-200 text-sm md:text-lg leading-relaxed max-w-4xl mx-auto">
             Harness the power of{" "}
             <span className="font-semibold text-red-500">latest programming languages</span>,{" "}
             <span className="font-semibold text-red-500">AI frameworks</span>,{" "}
             <span className="font-semibold text-red-500">automation platforms</span>, and{" "}
             <span className="font-semibold text-red-500">cloud infrastructure</span> to build{" "}
-            <span className="font-bold text-red-500">intelligent, scalable systems</span> that accelerate business growth.
+            <span className="font-bold text-red-500">
+              intelligent, scalable systems
+            </span>{" "}
+            that accelerate business growth.
           </p>
         </div>
+
       </div>
     </section>
   );

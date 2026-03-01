@@ -134,7 +134,7 @@ const ServicesOverview = () => {
 
   return (
     <section className="py-16 md:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-4 px-4 sm:px-6 lg:px-8 border border-red-200 rounded-lg py-6 px-3 lg:px-6  bg-gray-900/60">
         {/* ================= HEADING SECTION ================= */}
         <motion.div
           className="text-center mb-12"
@@ -152,7 +152,7 @@ const ServicesOverview = () => {
 
           <motion.p
             variants={slideLeft}
-            className="text-xl text-neutral-300 max-w-2xl mx-auto"
+            className="text-xl text-neutral-200 max-w-2xl mx-auto"
           >
             We solve real operational challenges with technology that works for your business, not against it.
           </motion.p>
@@ -171,7 +171,7 @@ const ServicesOverview = () => {
               <Link href={service.href}>
                 <div className="
                   border border-red-300 
-                  bg-black 
+                  bg-black/40 
                   p-8 
                   rounded-lg 
                   shadow-[10px_0_20px_rgba(255,0,0,0.3),-10px_0_20px_rgba(255,0,0,0.3)] 
@@ -183,7 +183,7 @@ const ServicesOverview = () => {
                     {service.icon}
                   </div>
                   <h3 className="font-bold text-red-500 font-heading text-xl mb-3">{service.title}</h3>
-                  <p className="text-neutral-300 mb-4">{service.description}</p>
+                  <p className="text-neutral-200 mb-4">{service.description}</p>
                   <button className="text-red-500 border-red-600 border cursor-pointer bg-gray-800 px-4 py-2 mt-2 rounded-lg hover:bg-gray-700 transition font-semibold">
                     See Details →
                   </button>

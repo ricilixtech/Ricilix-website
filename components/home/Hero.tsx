@@ -59,7 +59,7 @@ const Hero = () => {
     <section className="relative  py-4 md:py-8 xl:py-10">
         {/* Sphere Background */}
 
-      <div className=" relative z-20 max-w-7xl xl:max-w-none md:py-6 py-4 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+      <div className=" relative z-20  max-w-7xl xl:max-w-none md:py-6 py-4 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
 
         {/* ===== HERO GRID ===== */}
         <div className="grid md:grid-cols-2 gap-10 xl:gap-16 2xl:gap-24 items-center">
@@ -70,10 +70,11 @@ const Hero = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
+            className="border border-red-200 rounded-lg py-3 px-3 lg:px-6  bg-gray-900/60"
           >
             <motion.h1
               variants={slideInLeft}
-              className="tracking-tight font-bold leading-tight font-heading text-3xl md:text-4xl xl:text-5xl 2xl:text-5xl text-gray-100 mb-6"
+              className="tracking-tight  font-bold leading-tight font-heading text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl text-gray-100 mb-6"
             >
               Transform Your <span className="text-red-600">
                 Business </span> with Intelligent <span className="text-red-600">

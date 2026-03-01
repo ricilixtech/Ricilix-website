@@ -75,7 +75,7 @@ const Navbar = () => {
                                     width={160}
                                     height={50}
                                     priority
-                                    className="h-17 xl:h-20 text-purple-500 w-auto object-contain hover:opacity-80 transition"
+                                    className="h-17 xl:h-20 text-red-500 w-auto object-contain hover:opacity-80 transition"
                                 />
                             </Link>
 
@@ -113,7 +113,7 @@ const Navbar = () => {
 
                             {/* Mobile Menu */}
                             <button
-                                className="md:hidden text-purple-700"
+                                className="md:hidden text-red-700"
                                 onClick={() => setIsMobileMenuOpen(true)}
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
