@@ -7,8 +7,8 @@ import WhyDifferent from '@/components/about/WhyDifferent';
 export default function AboutPage() {
   return (
     <>
-      <Mission />
       <Founders />
+      <Mission />
       <VisionPhilosophy />
       <Values />
       <WhyDifferent />

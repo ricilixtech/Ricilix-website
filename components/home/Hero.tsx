@@ -70,7 +70,7 @@ const Hero = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="border border-red-200 rounded-lg py-3 px-3 lg:px-6  bg-gray-900/60"
+            className="border border-red-200 rounded-lg py-8 px-3 lg:px-6  bg-gray-900/60"
           >
             <motion.h1
               variants={slideInLeft}
