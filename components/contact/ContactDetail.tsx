@@ -5,7 +5,7 @@ import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa";
 const ContactDetail = () => {
   return (
     <section className="mt-16 text-center">
-      <h2 className="text-2xl leading-tight tracking-tight font-heading md:text-3xl font-bold text-purple-800 mb-10">
+      <h2 className="text-2xl leading-tight tracking-tight font-heading md:text-3xl font-bold text-red-600 mb-10">
         Contact Us On
       </h2>
 

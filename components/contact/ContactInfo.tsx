@@ -3,7 +3,7 @@ import ContactDetail from "./ContactDetail";
 const ContactInfo = () => {
     return (
       <div>
-        <h2 className="font-heading text-2xl md:text-3xl text-neutral-900 mb-6">
+        <h2 className="font-heading text-2xl md:text-3xl text-neutral-100 font-bold mb-6">
           Get In Touch
         </h2>
         
@@ -15,8 +15,8 @@ const ContactInfo = () => {
               </svg>
             </div>
             <div>
-              <h3 className="font-heading text-lg text-neutral-900 mb-1">Email</h3>
-              <p className="text-neutral-600">ricilixtech@gmail.com</p>
+              <h3 className="font-heading text-lg font-bold text-neutral-100 mb-1">Email</h3>
+              <p className="text-neutral-200">ricilixtech@gmail.com</p>
             </div>
           </div>
           
@@ -28,21 +28,21 @@ const ContactInfo = () => {
               </svg>
             </div>
             <div>
-              <h3 className="font-heading text-lg text-neutral-900 mb-1">Business Hours</h3>
-              <p className="text-neutral-600">Monday - Friday: 9am - 6pm PST</p>
-              <p className="text-neutral-600">Weekend: By appointment</p>
+              <h3 className="font-heading text-lg text-neutral-100 font-bold mb-1">Business Hours</h3>
+              <p className="text-neutral-200">Monday - Friday: 9am - 6pm PST</p>
+              <p className="text-neutral-200">Weekend: By appointment</p>
             </div>
           </div>
         </div>
         
-        <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-large">
-          <h3 className="font-heading tracking-tight leading-tight text-xl text-purple-800 mb-4">
+        <div className="bg-gradient-to-br from-blue-50 to-red-50 p-8 rounded-large">
+          <h3 className="font-heading font-bold tracking-tight leading-tight text-xl text-red-800 mb-4">
             Book a Free Consultation
           </h3>
           <p className="text-neutral-600 mb-6">
             Schedule a 30-minute call with our team to discuss your business challenges and explore solutions.
           </p>
-          <button className="w-full bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition shadow-custom font-medium">
+          <button className="w-full bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-800 transition shadow-custom font-medium">
             Schedule Now
           </button>
         </div>
